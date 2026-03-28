@@ -1,0 +1,57 @@
+{ config, pkgs, ... }:
+
+{
+ home.username = "cedrick";
+ home.homeDirectory = "/home/cedrick";
+ home.stateVersion = "25.11";
+ 
+ home.packages = with pkgs; [
+  vim
+  emacs
+  git
+  wget
+  curl
+  htop
+  neofetch
+  ripgrep
+  fzf
+  bat
+  eza
+  zoxide
+  nodejs_22
+  python3
+  firefox
+  kdePackages.kdenlive
+ ];
+
+ programs.git = {
+  enable = true;
+  settings = {
+   user = {
+    name = "Cedrick-Coto";
+    email = "cedrick.coto@gmail.com";
+   };
+   init = {
+    defaultBranch = "main";
+   };
+   pull = {
+    rebase = true;
+   };
+  };
+ };
+
+ programs.bash = {
+  enable = true;
+  shellAliases = {
+   ls = "eza --icons";
+   ll = "eza -la --icons";
+   cat = "bat";
+   nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos";
+   hms = "home-manager switch --flake ~/nixos-config#cedrick";
+  };
+  initExtra = ''
+   eval "$(zoxide init bash)"
+  '';
+ };
+  programs.home-manager.enable = true;
+}
