@@ -1,0 +1,8 @@
+{
+  imports = [
+    ./input.nix
+    ./binds.nix
+    ./monitors.nix
+    ./env.nix
+  ];
+}

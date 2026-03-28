@@ -16,6 +16,10 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  hardware.bluetooth.enable = true;
+
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -63,7 +67,6 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.hyprland.enable = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -71,15 +74,9 @@
   #  wget
   hyprland
   waybar
-  matugen
-  eww
-  swww
-  grim
-  slurp
-  swappy
-  kitty
   wofi
-  quickshell
+  kitty
+  
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

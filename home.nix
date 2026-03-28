@@ -1,18 +1,24 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
+ imports = [
+  inputs.noctalia.homeModules.default
+  ./home/hyprland
+  ];
  home.username = "cedrick";
  home.homeDirectory = "/home/cedrick";
  home.stateVersion = "25.11";
  
   home.packages = with pkgs; [
   obsidian
+  kdePackages.dolphin
   vim
+  neovim
+  kdePackages.ark
   emacs
   git
   wget
   curl
-  mission-center
   (btop.override { rocmSupport = true; })
   neofetch
   ripgrep
@@ -35,16 +41,20 @@
   enableSshSupport = true; 
  };
 
- programs.git = {
+programs.git = {
   enable = true;
-  userName = "Cedrick-Coto";
-  userEmail = "cedrick.coto@gmail.com";
-  extraConfig = {
+
+  settings = {
+    user = {
+      name = "Cedrick-Coto";
+      email = "cedrick.coto@gmail.com";
+    };
+
     credential.helper = "store";
     init.defaultBranch = "main";
     pull.rebase = true;
   };
- };
+};
 
  home.pointerCursor = {
   gtk.enable = true;
@@ -52,7 +62,63 @@
   name = "catppuccin-mocha-dark-cursors";
   size = 24;
  };
-
+    # configure options
+    programs.noctalia-shell = {
+      enable = true;
+      settings = {
+        # configure noctalia here
+        bar = {
+          density = "compact";
+          position = "right";
+          showCapsule = false;
+          widgets = {
+            left = [
+              {
+                id = "ControlCenter";
+                useDistroLogo = true;
+              }
+              {
+                id = "Network";
+              }
+              {
+                id = "Bluetooth";
+              }
+            ];
+            center = [
+              {
+                hideUnoccupied = false;
+                id = "Workspace";
+                labelMode = "none";
+              }
+            ];
+            right = [
+              {
+                alwaysShowPercentage = false;
+                id = "Battery";
+                warningThreshold = 30;
+              }
+              {
+                formatHorizontal = "HH:mm";
+                formatVertical = "HH mm";
+                id = "Clock";
+                useMonospacedFont = true;
+                usePrimaryColor = true;
+              }
+            ];
+          };
+        };
+        colorSchemes.predefinedScheme = "Monochrome";
+        general = {
+          avatarImage = "/home/cedrick/.face";
+          radiusRatio = 0.2;
+        };
+        location = {
+          monthBeforeDay = true;
+          name = "Marseille, France";
+        };
+      };
+      # this may also be a string or a path to a JSON file.
+    };
  gtk = {
   enable = true;
   theme = {
