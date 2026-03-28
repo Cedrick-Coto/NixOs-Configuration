@@ -8,7 +8,7 @@
       # Apps
       "$mainMod, RETURN, exec, alacritty"
       "$mainMod, B, exec, firefox"
-      "$mainMod, E, exec, nautilus"
+      "$mainMod, E, exec, dolphin"
       "$mainMod, RETURN, exec, kitty"
       
       "$mainMod CTRL, RETURN, exec, noctalia-shell ipc call launcher toggle"
