@@ -1,24 +1,6 @@
 { config, pkgs, ... }:
-let
-  programsDir = ./config/programs;
-  files = builtins.readDir programsDir;
 
-  validDirs = builtins.filter
-    (name:
-      files.${name} == "directory" &&
-      builtins.pathExists (programsDir + "/${name}/default.nix")
-    )
-    (builtins.attrNames files);
-
-  programImports = map (name: programsDir + "/${name}") validDirs;
-
-in
 {
-  imports =
-    [
-      ./config/sessions/hyprland/default.nix
-    ] ++ programImports;
-
  home.username = "cedrick";
  home.homeDirectory = "/home/cedrick";
  home.stateVersion = "25.11";
