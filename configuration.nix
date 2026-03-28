@@ -105,6 +105,11 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" "amdgpu.dcfeaturemask=0x2" "amdgpu.noretry=1" ];
   services.openssh.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.defaultSession = "hyprland";
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
  # services.desktopManager.cosmic.enable = true;
  # services.displayManager.cosmic-greeter.enable = true;
   system.stateVersion = "25.11"; # Did you read the comment?
