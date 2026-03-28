@@ -10,6 +10,10 @@
  home.stateVersion = "25.11";
  
   home.packages = with pkgs; [
+  grim
+  slurp
+  wl-clipboard
+  swappy
   obsidian
   kdePackages.dolphin
   vim

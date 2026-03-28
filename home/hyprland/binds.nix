@@ -51,6 +51,17 @@
       "$mainMod CTRL, 7, movetoworkspace, 7"
       "$mainMod CTRL, 8, movetoworkspace, 8"
       "$mainMod CTRL, 9, movetoworkspace, 9"
+	# Screenshot área → portapapeles
+    ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
+
+    # Screenshot pantalla completa
+    "SHIFT, Print, exec, grim - | wl-copy"
+
+    # Screenshot área + guardar archivo
+    "CTRL, Print, exec, grim -g \"$(slurp)\" ~/Pictures/screenshot-$(date +%F-%T).png"
+
+    # Screenshot con editor (pro)
+    "SUPER, Print, exec, grim -g \"$(slurp)\" - | swappy -f -"
     ];
 
     bindl = [
