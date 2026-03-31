@@ -11,6 +11,9 @@
  
   home.packages = with pkgs; [
   grim
+  nautilus
+  steam
+  bottles
   slurp
   wl-clipboard
   swappy
@@ -37,8 +40,15 @@
   git-credential-manager
   github-cli
   onlyoffice-desktopeditors
+  protonup-qt
+  protontricks
  ];
-
+ services.udiskie = {
+  enable = true;
+  tray = "auto";
+  automount = true;
+  notify = true;
+ };
  services.gpg-agent = {
   enable = true;
   # En Home Manager la opción es 'enableSshSupport' (con la 'h' minúscula)
