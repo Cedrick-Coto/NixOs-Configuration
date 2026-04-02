@@ -42,6 +42,7 @@
   onlyoffice-desktopeditors
   protonup-qt
   protontricks
+  uget
  ];
  services.udiskie = {
   enable = true;
