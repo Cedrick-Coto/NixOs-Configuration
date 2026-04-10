@@ -20,6 +20,7 @@
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
+  services.flatpak.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -67,6 +68,11 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.hyprland.enable = true;
+  programs.steam = {
+   enable = true;
+   remotePlay.openFirewall = true;
+   dedicatedServer.openFirewall = true;
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

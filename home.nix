@@ -13,7 +13,6 @@
   grim
   nautilus
   steam
-  bottles
   slurp
   wl-clipboard
   swappy
@@ -43,6 +42,19 @@
   protonup-qt
   protontricks
   uget
+  persepolis
+  motrix
+  krita
+  vscodium
+  hydralauncher
+  lutris
+  (bottles.override { removeWarningPopup = true; })
+  winetricks
+  wineWowPackages.stable
+  nwg-displays
+  wlr-randr
+  glib
+  gsettings-desktop-schemas
  ];
  services.udiskie = {
   enable = true;
@@ -70,6 +82,7 @@ programs.git = {
     pull.rebase = true;
   };
 };
+
 
  home.pointerCursor = {
   gtk.enable = true;
