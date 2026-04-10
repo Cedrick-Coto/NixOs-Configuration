@@ -35,7 +35,6 @@
   nodejs_22
   python3
   firefox
-  kdePackages.kdenlive
   git-credential-manager
   github-cli
   onlyoffice-desktopeditors
@@ -53,8 +52,7 @@
   wineWowPackages.stable
   nwg-displays
   wlr-randr
-  glib
-  gsettings-desktop-schemas
+  shotcut
  ];
  services.udiskie = {
   enable = true;
