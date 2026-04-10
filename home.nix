@@ -53,6 +53,7 @@
   nwg-displays
   wlr-randr
   shotcut
+  kdePackages.kdenlive
  ];
  services.udiskie = {
   enable = true;
