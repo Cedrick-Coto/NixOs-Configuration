@@ -11,6 +11,7 @@
  
   home.packages = with pkgs; [
   grim
+  unzip
   nautilus
   steam
   slurp
@@ -178,4 +179,12 @@ programs.git = {
   '';
  };
   programs.home-manager.enable = true;
+xdg.portal = {
+ enable = true;
+ extraPortals = [
+  pkgs.xdg-desktop-portal-cosmic
+  pkgs.xdg-desktop-portal-gtk
+ ];
+ config.common.default = "cosmic";
+};
 }
