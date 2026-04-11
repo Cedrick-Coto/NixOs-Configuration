@@ -11,6 +11,9 @@
  
   home.packages = with pkgs; [
   grim
+  isync
+  mu
+  mstp
   unzip
   nautilus
   steam
