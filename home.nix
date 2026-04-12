@@ -13,8 +13,10 @@
   grim
   isync
   mu
-  mstp
   unzip
+  peazip
+  unrar
+  baobab
   nautilus
   steam
   slurp
@@ -26,6 +28,7 @@
   neovim
   kdePackages.ark
   emacs
+  vesktop
   git
   wget
   curl
