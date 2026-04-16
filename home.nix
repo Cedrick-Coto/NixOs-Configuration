@@ -10,6 +10,7 @@
  home.stateVersion = "25.11";
  
   home.packages = with pkgs; [
+  cmake
   grim
   isync
   mu
@@ -188,9 +189,14 @@ programs.git = {
 xdg.portal = {
  enable = true;
  extraPortals = [
-  pkgs.xdg-desktop-portal-cosmic
+  pkgs.xdg-desktop-portal-hyprland
   pkgs.xdg-desktop-portal-gtk
  ];
- config.common.default = "cosmic";
+ config.common.default = [ "hyprland" "gtk" ];
+};
+displayManager.sddm = {
+ enable = true;
+ theme = "catpuccin-mocha-mauve";
+ package = pkgs.kdePackages.sddm;
 };
 }
