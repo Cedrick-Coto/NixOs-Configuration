@@ -6,17 +6,19 @@
 
     bind = [
       # Apps
-      "$mainMod, RETURN, exec, alacritty"
       "$mainMod, B, exec, firefox"
-      "$mainMod, E, exec, dolphin"
-      "$mainMod, RETURN, exec, kitty"
+      "$mainMod, E, exec, thunar"
+      "$mainMod, RETURN, exec, ghostty"
       
-      "$mainMod CTRL, RETURN, exec, noctalia-shell ipc call launcher toggle"
+      #"$mainMod CTRL, RETURN, exec, noctalia-shell ipc call launcher toggle"
+      "$mainMod CTRL, RETURN, exec, vicinae toggle"
       "$mainMod ALT, L, exec, noctalia-shell ipc call lockScreen lock"
       "$mainMod SHIFT, Q, exec, noctalia-shell ipc call sessionMenu toggle"
 
       # Close
       "$mainMod, Q, killactive"
+      # Toggle window
+      "$mainMod, V, togglefloating"
 
       # Focus
       "$mainMod, H, movefocus, l"

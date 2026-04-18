@@ -4,6 +4,7 @@
   exec-once = [
     "noctalia-shell"
     "udiskie"
+    "vicinae -- server"
   ];
 };
 }

@@ -18,13 +18,13 @@
   peazip
   unrar
   baobab
-  nautilus
   steam
   slurp
   wl-clipboard
   swappy
   obsidian
-  kdePackages.dolphin
+  xfce.thunar
+  gamemode
   vim
   neovim
   kdePackages.ark
@@ -46,6 +46,7 @@
   git-credential-manager
   github-cli
   onlyoffice-desktopeditors
+  zathura
   protonup-qt
   protontricks
   uget
@@ -186,17 +187,12 @@ programs.git = {
   '';
  };
   programs.home-manager.enable = true;
-xdg.portal = {
- enable = true;
- extraPortals = [
-  pkgs.xdg-desktop-portal-hyprland
-  pkgs.xdg-desktop-portal-gtk
- ];
- config.common.default = [ "hyprland" "gtk" ];
-};
-displayManager.sddm = {
- enable = true;
- theme = "catpuccin-mocha-mauve";
- package = pkgs.kdePackages.sddm;
-};
+ xdg.portal = {
+  enable = true;
+  extraPortals = [
+   pkgs.xdg-desktop-portal-hyprland
+   pkgs.xdg-desktop-portal-gtk
+  ];
+  config.common.default = [ "hyprland" "gtk" ];
+ };
 }

@@ -80,25 +80,23 @@
   #  wget
   hyprland
   waybar
-  wofi
-  kitty
+  walker
+  vicinae
+  fuzzel
+  pywalfox-native
+  ghostty
   udisks
   udiskie 
   ntfs3g
-  catpuccin-sddm.override {
+  (catppuccin-sddm.override {
    flavor = "mocha";
    accent = "mauve";
    font = "Noto Sans";
    fontSize = "9";
    background = "${./home/Wallpapers/wallhaven_mdpzq8.jpg}";
    loginBackground = true;
-  }
-  displayManager.sddm = {
-   enable = true;
-   theme = "catpuccin-mocha-mauve";
-   package = pkgs.kdePackages.sddm;
-  };
-  ];
+  })
+    ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -110,6 +108,12 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.udisks2.mountOnMedia = true;
+  services.displayManager.sddm = {
+   enable = true;
+   theme = "catpuccin-mocha-mauve";
+   package = pkgs.kdePackages.sddm;
+  };
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
@@ -129,7 +133,7 @@
   boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" "amdgpu.dcfeaturemask=0x2" "amdgpu.noretry=1" ];
   boot.supportedFilesystems = [ "ntfs" ];
   services.openssh.enable = true;
-  services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.defaultSession = "hyprland";
   xdg.portal.enable = true;
