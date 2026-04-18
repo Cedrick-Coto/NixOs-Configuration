@@ -94,8 +94,8 @@ programs.git = {
 
  home.pointerCursor = {
   gtk.enable = true;
-  package = pkgs.catppuccin-cursors.mochaDark;
-  name = "catppuccin-mocha-dark-cursors";
+  package = pkgs.afterglow-cursors-recolored;
+  name = "Afterglow-Cursors";
   size = 24;
  };
     # configure options
