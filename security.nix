@@ -10,6 +10,14 @@
   # - NIST Cybersecurity Framework
   # - Best practices de la comunidad NixOS
   #
+  # IMPORTANTE: Esta configuración está diseñada para un sistema LOCAL/DESKTOP,
+  # NO para un servidor expuesto a internet. Si vas a exponer servicios públicos,
+  # considera agregar:
+  # - VPN (WireGuard) para acceso remoto
+  # - Fail2ban más agresivo
+  # - IDS/IPS (Snort, Suricata)
+  # - Rate limiting más estricto
+  #
   # Autor: Cedrick Coto
   # Fecha: 2026-05-22
   # Repo: https://github.com/Cedrick-Coto/NixOs-Configuration
@@ -205,9 +213,13 @@
   
   # Parámetros adicionales del kernel en boot
   boot.kernelParams = [
-    # Habilitar IOMMU (protección de DMA)
-    "iommu=force"
-    "intel_iommu=on"  # Para Intel (cambiar a amd_iommu=on si tienes AMD)
+    # IOMMU params - COMMENTED OUT by default
+    # WARNING: These can break HDMI/display output on some AMD systems
+    # Test one by one if you need DMA protection
+    # See Reddit feedback: https://www.reddit.com/r/NixOS/comments/...
+    # "iommu=force"
+    # "intel_iommu=on"  # Para Intel
+    # "amd_iommu=on"    # Para AMD
     
     # Deshabilitar módulos no firmados
     # "module.sig_enforce=1"  # Descomenta si quieres máxima seguridad

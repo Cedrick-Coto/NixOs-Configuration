@@ -78,16 +78,12 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-  hyprland
-  waybar
-  walker
-  vicinae
-  fuzzel
-  pywalfox-native
-  ghostty
+  
+  # System-level packages (needed before user login)
   udisks
-  udiskie 
   ntfs3g
+  
+  # SDDM theme (display manager, must be system-level)
   (catppuccin-sddm.override {
    flavor = "mocha";
    accent = "mauve";
@@ -96,6 +92,9 @@
    background = "${./home/Wallpapers/wallhaven_mdpzq8.jpg}";
    loginBackground = true;
   })
+  
+  # Note: hyprland, waybar, ghostty, etc. are in home.nix (user-level)
+  # udiskie is also in home.nix as a service
     ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -130,7 +129,16 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  boot.kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" "amdgpu.dcfeaturemask=0x2" "amdgpu.noretry=1" ];
+  boot.kernelParams = [ 
+    "amdgpu.ppfeaturemask=0xffffffff" 
+    "amdgpu.dcfeaturemask=0x2" 
+    "amdgpu.noretry=1" 
+    
+    # IOMMU params commented out - can break HDMI/display output on some AMD systems
+    # Test one by one if you need them. See: https://www.reddit.com/r/NixOS/comments/...
+    # "iommu=force"
+    # "amd_iommu=on"
+  ];
   boot.supportedFilesystems = [ "ntfs" ];
   services.openssh.enable = true;
   # services.displayManager.sddm.enable = true;
