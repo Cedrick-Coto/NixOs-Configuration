@@ -1,0 +1,6 @@
+# Hardware-specific configuration (machine-dependent)
+hardware-configuration.nix
+
+# Backup files
+*.nix~
+*~
