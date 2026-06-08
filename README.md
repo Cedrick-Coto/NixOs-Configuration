@@ -211,7 +211,7 @@ Ejemplos:
 Ahora que tengo un sistema NixOS maduro y estable, mi siguiente objetivo es profundizar en ciberseguridad:
 
 ### Fase 1: Fundamentos (Mes 1-2)
-- ✅ Implementar `security.nix` con hardening completo
+- ✅ Implementar `security.nix` con una configuración personal de seguridad modular implementando firewall, SSH restrictions, fail2ban, auditd y AppArmor.
 - [ ] TryHackMe: Complete Beginner Path (20+ rooms)
 - [ ] OverTheWire: Bandit (todos los niveles)
 - [ ] Análisis de red local con Wireshark + nmap
