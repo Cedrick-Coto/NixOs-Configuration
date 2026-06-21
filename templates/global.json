@@ -1,0 +1,10 @@
+{
+  "sdk": {
+    "version": "10.0.108",
+    "rollForward": "latestFeature",
+    "allowPrerelease": true
+  },
+  "msbuildSdks": {
+    "Microsoft.NET.Sdk.Web": "10.0.100"
+  }
+}

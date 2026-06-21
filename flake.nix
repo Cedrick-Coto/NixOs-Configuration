@@ -1,16 +1,11 @@
 {
-  description = "NixOS config - Cedrick";
+  description = "NixOS flake modular - Cedrick";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -18,20 +13,21 @@
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-
       specialArgs = { inherit inputs; };
 
       modules = [
-        ./configuration.nix
+        # Host-specific config (imports all system modules + hardware)
+        ./hosts/nixos
+
+        # Home-manager (user config)
         home-manager.nixosModules.home-manager
-
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-
-          home-manager.extraSpecialArgs = { inherit inputs; };
-
-          home-manager.users.cedrick = import ./home.nix;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = { inherit inputs; };
+            users.cedrick = import ./home;
+          };
         }
       ];
     };

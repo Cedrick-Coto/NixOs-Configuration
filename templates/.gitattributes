@@ -1,0 +1,45 @@
+# Configuracion Git para compatibilidad multiplataforma
+# Windows (VS) -> CRLF en checkout, Linux/Mac -> LF
+# Git convierte automaticamente segun la plataforma
+
+# Git normaliza automaticamente:
+# - Windows: CRLF en working tree, LF en repositorio
+# - Linux/Mac: LF en working tree, LF en repositorio
+* text=auto
+
+# Archivos de texto con manejo especial
+*.cs    text diff=csharp
+*.vb    text
+*.csproj text diff=xml
+*.sln   text eol=crlf
+*.props text diff=xml
+*.targets text diff=xml
+*.razor text
+*.cshtml text
+*.json  text
+*.md    text
+*.xml   text
+*.yaml  text
+*.yml   text
+
+# Archivos binarios
+*.dll   binary
+*.exe   binary
+*.pdb   binary
+*.png   binary
+*.jpg   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+
+# NuGet
+*.nupkg binary
+
+# Lock files
+*.lock.json text
+
+# Always LF for GitHub Actions / devcontainers
+/.github/** text eol=lf
+/devcontainer.json text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=crlf

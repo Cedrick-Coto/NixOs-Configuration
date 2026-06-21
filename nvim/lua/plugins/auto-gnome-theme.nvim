@@ -1,0 +1,7 @@
+-- En ~/.config/nvim/lua/plugins/gnome.lua
+return {
+  "itsfernn/auto-gnome-theme.nvim",
+  config = function()
+    require("auto-gnome-theme").setup()
+  end,
+}

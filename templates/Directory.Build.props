@@ -1,0 +1,24 @@
+<Project>
+  <!-- Configuracion compartida para todo el proyecto -->
+  <!-- Compatible con Visual Studio en Windows y Neovim en Linux/Mac -->
+
+  <PropertyGroup>
+    <!-- Nullable habilitado (estandar moderno .NET) -->
+    <Nullable>enable</Nullable>
+
+    <!-- Implicit usings globales (System, LINQ, etc.) -->
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Debug symbols portatiles (compatibles cross-platform) -->
+    <DebugType>portable</DebugType>
+
+    <!-- Analizadores Roslyn (VS los usa por defecto) -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>Recommended</AnalysisMode>
+
+    <!-- Compatibilidad de paths cross-platform -->
+    <MSBuildProjectExtensionsPath>obj/</MSBuildProjectExtensionsPath>
+    <BaseIntermediateOutputPath>obj/</BaseIntermediateOutputPath>
+  </PropertyGroup>
+</Project>

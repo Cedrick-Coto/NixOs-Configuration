@@ -1,0 +1,19 @@
+# Juegos y herramientas de gaming
+{ pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    # Steam y gaming
+    steam
+    gamemode
+    protonup-qt
+    protontricks
+    lutris
+    hydralauncher
+
+    # Wine/Bottles
+    bottles
+    winetricks
+    wineWowPackages.stable
+  ];
+}
