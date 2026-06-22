@@ -10,11 +10,12 @@
       la   = "eza -la --icons";
       cat  = "bat";
       top  = "btop";
-      nrs  = "sudo nixos-rebuild switch --flake ~/NixOs-Configuration#nixos";
-      hms  = "home-manager switch --flake ~/NixOs-Configuration#cedrick";
+      nrs  = "sudo nixos-rebuild switch --flake $FLAKE#nixos";
+      hms  = "home-manager switch --flake $FLAKE#cedrick";
       nv   = "nvim";
     };
     initExtra = ''
+      export FLAKE="$HOME/NixOs-Configuration"
       eval "$(zoxide init bash)"
       eval "$(starship init bash)"
       export PATH="$HOME/.local/bin:$PATH"

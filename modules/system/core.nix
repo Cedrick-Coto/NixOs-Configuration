@@ -8,7 +8,7 @@
   boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288;
 
   time.timeZone = "America/Costa_Rica";
-  i18n.defaultLocale = "es_MX.UTF-8";
+  i18n.defaultLocale = "es_CR.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "es_CR.UTF-8";
     LC_IDENTIFICATION = "es_CR.UTF-8";

@@ -12,11 +12,6 @@
     iotop
   ];
 
-  services.openssh.settings = {
-    PermitRootLogin = "no";
-    PasswordAuthentication = false;
-  };
-
   boot.kernel.sysctl = {
     "net.ipv4.conf.all.rp_filter" = 1;
     "net.ipv4.conf.all.accept_redirects" = 0;
