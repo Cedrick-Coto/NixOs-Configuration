@@ -7,7 +7,7 @@
     "amdgpu.dcfeaturemask=0x2"
   ];
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };

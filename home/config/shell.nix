@@ -10,8 +10,8 @@
       la   = "eza -la --icons";
       cat  = "bat";
       top  = "btop";
-      nrs  = "sudo nixos-rebuild switch --flake ~/nix-config#nixos";
-      hms  = "home-manager switch --flake ~/nix-config#cedrick";
+      nrs  = "sudo nixos-rebuild switch --flake ~/NixOs-Configuration#nixos";
+      hms  = "home-manager switch --flake ~/NixOs-Configuration#cedrick";
       nv   = "nvim";
     };
     initExtra = ''

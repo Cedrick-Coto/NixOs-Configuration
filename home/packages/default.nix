@@ -10,7 +10,7 @@
     zathura
 
     # Archivos
-    xfce.thunar
+    thunar
     kdePackages.ark
     peazip
     unzip

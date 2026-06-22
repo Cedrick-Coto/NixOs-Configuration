@@ -14,6 +14,6 @@
     # Wine/Bottles
     bottles
     winetricks
-    wineWowPackages.stable
+    wineWow64Packages.stable
   ];
 }

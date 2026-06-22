@@ -4,7 +4,7 @@
 {
   home.packages = with pkgs; [
     # Sistema
-    neofetch
+    fastfetch
     baobab
 
     # Captura de pantalla

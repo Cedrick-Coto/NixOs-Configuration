@@ -28,7 +28,6 @@
     isNormalUser = true;
     description = "cedrick";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
-    initialPassword = "nixos";
   };
 
   security.sudo.extraConfig = ''

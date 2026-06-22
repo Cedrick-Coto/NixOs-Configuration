@@ -4,13 +4,13 @@
 {
   programs.git = {
     enable = true;
-    userName = "Cedrick-Coto";
-    userEmail = "cedrick.coto@gmail.com";
     ignores = [ "*.swp" "*~" ".DS_Store" ];
-    extraConfig = {
+    settings = {
+      user.name = "Cedrick-Coto";
+      user.email = "cedrick.coto@gmail.com";
       init.defaultBranch = "main";
       pull.rebase = true;
-      credential.helper = "store";
+      credential.helper = "libsecret";
     };
   };
 

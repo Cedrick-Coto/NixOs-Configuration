@@ -1,5 +1,5 @@
 # Contenedores y virtualizacion
-{ ... }:
+{pkgs, ... }:
 
 {
   virtualisation = {
