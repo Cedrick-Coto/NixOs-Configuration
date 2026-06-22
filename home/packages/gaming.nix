@@ -14,6 +14,6 @@
     # Wine/Bottles
     bottles
     winetricks
-    wineWow64Packages.stable
+    # wineWow64Packages.stable  # compila horas desde source, comentado para builds rápidas
   ];
 }

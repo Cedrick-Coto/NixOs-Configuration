@@ -1,9 +1,10 @@
 # GTK theme, iconos, cursor
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   gtk = {
     enable = true;
+    gtk4.theme = config.gtk.theme;
     theme = {
       name = "catppuccin-mocha-lavender-standard";
       package = pkgs.catppuccin-gtk.override {
