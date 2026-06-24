@@ -6,6 +6,11 @@
     # Sistema
     fastfetch
     baobab
+    bat
+    eza
+
+    # Nerd Font para icons en la terminal
+    nerd-fonts.jetbrains-mono
 
     # Captura de pantalla
     grim
@@ -24,5 +29,22 @@
 
     # Notificaciones
     libnotify
+
+    # Zsh y plugins
+    oh-my-zsh
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+
+    # Editor
+    neovim
+    ripgrep
+    fd
+    lazygit
+    tree-sitter
+    gcc
+
+    # Herramientas de coding con IA
+    opencode
+
   ];
 }

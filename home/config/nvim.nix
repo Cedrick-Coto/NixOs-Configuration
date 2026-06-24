@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
-  home.file.".config/nvim".source = ../../nvim;
+  home.file.".config/nvim" = {
+    source = ../../nvim;
+    force = true;
+  };
 }

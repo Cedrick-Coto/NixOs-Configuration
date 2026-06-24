@@ -3,11 +3,16 @@
 
 {
   home.packages = with pkgs; [
+
+    # Basicos
+    kitty
+
     # Productividad
-    firefox
     obsidian
     onlyoffice-desktopeditors
     zathura
+    # Gnome Software para descubrir/instalar Flatpaks (funciona en cualquier escritorio)
+    gnome-software
 
     # Archivos
     thunar
@@ -15,6 +20,10 @@
     peazip
     unzip
     unrar
+
+    # Gestion imperativa de paquetes (flatpak/appimage)
+    gearlever
+    appimage-run
 
     # Comunicacion
     vesktop

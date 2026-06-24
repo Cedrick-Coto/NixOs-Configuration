@@ -110,7 +110,10 @@ return {
   -- DAP UI
   {
     "rcarriga/nvim-dap-ui",
-    dependencies = { "mfussenegger/nvim-dap" },
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
+    },
     config = function()
       require("dapui").setup()
       -- Abrir/cerrar DAP UI automáticamente
@@ -129,6 +132,7 @@ return {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/nvim-nio",
       {
         "Issafalcon/neotest-dotnet",
         dependencies = { "nvim-neotest/neotest" },

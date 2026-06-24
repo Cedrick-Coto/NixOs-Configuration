@@ -11,12 +11,17 @@
     # Configuracion de usuario
     ./config/shell.nix
     ./config/git.nix
+    ./config/lazygit.nix
     ./config/gtk.nix
+    ./config/zen.nix
+    ./config/niri.nix
     ./config/nvim.nix
 
     # Servicios de usuario
     ./services.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   home.username = "cedrick";
   home.homeDirectory = "/home/cedrick";

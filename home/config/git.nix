@@ -5,9 +5,9 @@
   programs.git = {
     enable = true;
     ignores = [ "*.swp" "*~" ".DS_Store" ];
-    settings = {
-      user.name = "Cedrick-Coto";
-      user.email = "cedrick.coto@gmail.com";
+    userName = "Cedrick-Coto";
+    userEmail = "cedrick.coto@gmail.com";
+    extraConfig = {
       init.defaultBranch = "main";
       pull.rebase = true;
       credential.helper = "libsecret";

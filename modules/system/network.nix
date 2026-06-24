@@ -7,7 +7,7 @@
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 5000 5001 ];
-    logRefusedConnections = true;
+    logRefusedConnections = false;
   };
 
   services.timesyncd.enable = true;

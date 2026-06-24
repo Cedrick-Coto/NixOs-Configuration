@@ -1,19 +1,31 @@
-# Display manager (greetd) + Niri compositor + XDG portals
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet \
-          --time --remember --asterisks --cmd niri-session";
-        user = "greeter";
-      };
-    };
+  programs.dconf.enable = true;
+
+  systemd.user.services.dconf.wantedBy = [ "default.target" ];
+
+  systemd.services.home-manager-cedrick.environment = {
+    DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/${toString config.users.users.cedrick.uid}/bus";
   };
 
   programs.niri.enable = true;
+
+  programs.dms-shell = {
+    enable = true;
+    systemd = {
+      enable = true;
+      restartIfChanged = true;
+    };
+    enableSystemMonitoring = true;
+    enableDynamicTheming = true;
+  };
+
+  services.displayManager.dms-greeter = {
+    enable = true;
+    compositor.name = "niri";
+    configHome = "/home/cedrick";
+  };
 
   xdg.portal = {
     enable = true;

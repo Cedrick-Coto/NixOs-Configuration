@@ -24,9 +24,13 @@
   console.keyMap = "la-latin1";
   services.xserver.xkb.layout = "latam";
 
+  programs.zsh.enable = true;
+
   users.users.cedrick = {
     isNormalUser = true;
     description = "cedrick";
+    uid = 1000;
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
   };
 
@@ -38,12 +42,15 @@
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
-      auto-optimise-store = true;
     };
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 30d";
+    };
+    optimise = {
+      automatic = true;
+      dates = [ "weekly" ];
     };
   };
 
