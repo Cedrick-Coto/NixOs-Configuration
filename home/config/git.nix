@@ -10,7 +10,6 @@
     extraConfig = {
       init.defaultBranch = "main";
       pull.rebase = true;
-      credential.helper = "gh";
     };
   };
 
