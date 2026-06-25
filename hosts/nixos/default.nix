@@ -22,7 +22,6 @@
     ../../modules/desktop/niri.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
   networking.hostName = "nixos";
   system.stateVersion = "25.05";
 }

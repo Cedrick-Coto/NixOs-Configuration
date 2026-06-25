@@ -21,8 +21,6 @@
     ./services.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
   home.username = "cedrick";
   home.homeDirectory = "/home/cedrick";
   home.stateVersion = "25.05";
