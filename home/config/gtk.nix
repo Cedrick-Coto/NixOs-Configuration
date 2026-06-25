@@ -5,22 +5,16 @@
   gtk = {
     enable = true;
     theme = {
-      name = "catppuccin-mocha-lavender-standard";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ];
-        variant = "mocha";
-      };
+      name = "Nordic";
+      package = pkgs.nordic;
     };
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        accent = "lavender";
-        flavor = "mocha";
-      };
+      package = pkgs.papirus-icon-theme;
     };
     cursorTheme = {
-      name = "Afterglow-Cursors";
-      package = pkgs.afterglow-cursors-recolored;
+      name = "Nordic-cursors";
+      package = pkgs.nordic;
       size = 24;
     };
   };
