@@ -8,6 +8,7 @@
       name = "Nordic";
       package = pkgs.nordic;
     };
+    gtk4.theme = config.gtk.theme.name;
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
