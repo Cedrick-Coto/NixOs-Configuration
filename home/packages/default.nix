@@ -13,6 +13,7 @@
     zathura
     # Gnome Software para descubrir/instalar Flatpaks (funciona en cualquier escritorio)
     gnome-software
+    gnome-disk-utility
 
     # Archivos
     thunar
