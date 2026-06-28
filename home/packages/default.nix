@@ -16,7 +16,7 @@
     gnome-disk-utility
 
     # Archivos
-    thunar
+    nautilus
     kdePackages.ark
     peazip
     unzip
