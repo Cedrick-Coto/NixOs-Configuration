@@ -26,6 +26,8 @@
     pavucontrol
     pamixer
     brightnessctl
+    # Musica
+    cliamp
 
     # Notificaciones
     libnotify
